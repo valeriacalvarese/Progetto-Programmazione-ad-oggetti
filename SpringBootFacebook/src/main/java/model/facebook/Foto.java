@@ -6,18 +6,15 @@ package model.facebook;
 * @author Hermes Karalliu
 */
  
-public class Foto extends Post {
+public class Foto {
 	private String id_foto =null;
 	private String media_url = null;
-	private int pixelWide=0;
-	private int pixelHeight=0;
+	private int pixelWide=0; //larghezza 
+	private int pixelHeight=0; //altezza 
 	private int nbyte=0;
+	private String resize; //addamento delle immagini
 	
-	public Foto() 
-	{
-		super ();
-	}
-	
+		
 	public Foto(String id_foto, String media_url) 
 	{
 		this.id_foto = id_foto;
@@ -62,6 +59,14 @@ public class Foto extends Post {
 
 	public void setNbyte(int nbyte) {
 		this.nbyte = nbyte;
+	}
+	
+	public String getResize() {
+		return resize;
+	}
+
+	public void setResize(String resize) {
+		this.resize = resize;
 	}
 
 	@Override
