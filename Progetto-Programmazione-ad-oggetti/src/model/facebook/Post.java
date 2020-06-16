@@ -6,7 +6,7 @@ package model.facebook;
   * @author Hermes Karalliu
   */
 public class Post {
-	private String id;
+	private String id; 
 	private String media_type;
 	private String created_time;
 	
