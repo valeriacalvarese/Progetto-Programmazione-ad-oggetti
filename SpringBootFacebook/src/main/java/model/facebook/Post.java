@@ -7,10 +7,20 @@ package model.facebook;
   */
 public class Post {
 	private String id; 
-	private String media_type;
+	private String message;
 	private String created_time;
+	private String story;
 	
+	//costruttore;
+	public Post ()
+	{
+		this.id = null;
+		this.message= null;
+		this.created_time = null;
+		this.story =null;
+	}
 	//metodi get e set utilizzati per modificare e visualizzare le variabili;
+	
 	
 	public String getid() 
 	{
@@ -20,13 +30,13 @@ public class Post {
 	{
 		this.id = id;
 	}
-	public String getMedia_type()
+	public String getmessage()
 	{
-		return media_type;
+		return message;
 	}
-	public void setMedia_type(String media_type)
+	public void setmessage(String message)
 	{
-		this.media_type = media_type;
+		this.message = message;
 	}
 	public String getCreated_time() 
 	{
@@ -38,13 +48,19 @@ public class Post {
 	}
 	
 	
-
-	@Override
-	//metodo che restituisce la stringa della classe Post;
 	
-	public String toString() {
-		return "Post [id=" + id + ", media_type=" + media_type + ", created_time=" + created_time + "]";
+
+	public String getStory() {
+		return story;
 	}
+
+
+	public void setStory(String story) {
+		this.story = story;
+	}
+
+
+	
 	
 	
 }

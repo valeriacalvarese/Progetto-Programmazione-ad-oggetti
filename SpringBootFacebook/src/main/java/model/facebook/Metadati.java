@@ -1,6 +1,8 @@
 package model.facebook;
 
 public class Metadati 
+
+//Classe che restiuisce i metadati(formato json), ovvero l'elenco degli attributi e del tipo della classe;
 { 
 	private String name; //nome campo
 	private String type; //tipo campo

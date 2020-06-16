@@ -1,10 +1,12 @@
 package util.facebook;
 
-/** Classe Foto che estende la classe post;
+/** Il parsing analizza i dati d'ingresso
+ 
  *  
 * @author Valeria Calvarese
 * @author Hermes Karalliu
 */
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -24,6 +26,8 @@ public class Parsing {
 	 	 {
 			 String url =null;
 			 ArrayList<Post> post = new ArrayList<Post>();
+			 
+			 //Controllo eccezioni con try-catch
 			 
 			 try 
 			 {
@@ -52,10 +56,10 @@ public class Parsing {
 			 
 			 for (int i=0; i<array.length(); i++)
 			 {
-				 JSONObject o = object.getJSONArray("data").getJSONObject(i);
-				 ObjectMapper m=new ObjectMapper ();
-				 Post p = m.readValue(o.toString(), Post.class);
-				 post.add(p);
+				 JSONObject o1 = object.getJSONArray("data").getJSONObject(i);
+				 ObjectMapper o2 =new ObjectMapper ();
+				 Post o3  = o2.readValue(o1.toString(), Post.class);
+				 post.add(o3);
 						 
 			 }
 			 return post;

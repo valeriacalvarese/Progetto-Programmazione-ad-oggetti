@@ -1,25 +1,33 @@
 package util.facebook;
 
+
+/** 
+ *  
+* @author Valeria Calvarese
+* @author Hermes Karalliu
+*/
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 import org.json.JSONException;
 
+import model.facebook.Metadati;
 import model.facebook.Post;
-//import model.facebook.Metadata;
+
 
 public class Storage
 {
 	
-	//public static ArrayList<Metadata> metadata = newArrayList<Metadata> ();
+	public static ArrayList<Metadati> metadati = new ArrayList<Metadati>();
 	public static ArrayList<Post> post = new ArrayList<Post>();
 	
-	public static void fill_post(String str) throws MalformedURLException, IOException, JSONException
+	public static void fill_post(String string1) throws MalformedURLException, IOException, JSONException
 	{
+		//controllo eccezioni
 		try 
 		{
-			post= Parsing.getPost(str);
+			post= Parsing.getPost(string1);
 		}
 		 catch (MalformedURLException e)
 		 {
@@ -35,5 +43,18 @@ public class Storage
 			e.printStackTrace();
 		} 
 		
+	}
+
+	public static ArrayList<Metadati> fill_Metadati() {
+		// TODO Auto-generated method stub
+		metadati.add(new Metadati("id","String","identificator"));
+		metadati.add(new Metadati("message","String","description"));
+		metadati.add(new Metadati("create_time","String","whenwaspublished"));
+		return metadati;
+	}
+
+	public static ArrayList<Post> get_post() {
+		// TODO Auto-generated method stub
+		return post;
 	}
 }
