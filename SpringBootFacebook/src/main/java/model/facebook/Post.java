@@ -10,6 +10,11 @@ public class Post {
 	private String message;
 	private String created_time;
 	private String story;
+	private int pixelHeigth;
+	private int pixelWidth;
+	private String resize;
+	private int nbyte;
+	
 	
 	//costruttore;
 	public Post ()
@@ -18,6 +23,11 @@ public class Post {
 		this.message= null;
 		this.created_time = null;
 		this.story =null;
+		this.pixelHeigth =0;
+		this.pixelWidth= 0;
+		this.resize = null;
+		this.nbyte = 0;
+	
 	}
 	//metodi get e set utilizzati per modificare e visualizzare le variabili;
 	
@@ -46,9 +56,7 @@ public class Post {
 	{
 		this.created_time = created_time;
 	}
-	
-	
-	
+
 
 	public String getStory() {
 		return story;
@@ -60,6 +68,50 @@ public class Post {
 	}
 
 
+	public int getPixelHeigth() {
+		return pixelHeigth;
+	}
+
+
+	public void setPixelHeigth(int pixelHeigth) {
+		this.pixelHeigth = pixelHeigth;
+	}
+
+
+	public int getPixelWidth() {
+		return pixelWidth;
+	}
+
+
+	public void setPixelWidth(int pixelWidth) {
+		this.pixelWidth = pixelWidth;
+	}
+
+
+	public String getResize() {
+		return resize;
+	}
+
+
+	public void setResize(String resize) {
+		this.resize = resize;
+	}
+
+
+	public int getNbyte() {
+		return nbyte;
+	}
+
+
+	public void setNbyte(int nbyte) {
+		this.nbyte = nbyte;
+	}
+	
+	
+
+	
+
+	
 	
 	
 	

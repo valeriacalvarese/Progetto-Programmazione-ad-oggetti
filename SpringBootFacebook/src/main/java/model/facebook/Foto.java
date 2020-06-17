@@ -6,20 +6,24 @@ package model.facebook;
 * @author Hermes Karalliu
 */
  
-public class Foto {
+public class Foto extends Post {
+	
 	private String id_foto =null;
 	private String media_url = null;
 	private int pixelWide=0; //larghezza 
 	private int pixelHeight=0; //altezza 
 	private int nbyte=0;
-	private String resize; //addamento delle immagini
+	private String resize= null; //adattamento delle immagini
 	
-		
-	public Foto(String id_foto, String media_url) 
+	public Foto (String id_foto, String media_url, String resize)
 	{
+		super();
 		this.id_foto = id_foto;
-		this.media_url= media_url;
+		this.media_url =media_url;
+		this.resize = resize;
+		
 	}
+	
 
 	public String getId_foto() {
 		return id_foto;
@@ -72,7 +76,7 @@ public class Foto {
 	@Override
 	public String toString() {
 		return "Foto [id_foto=" + id_foto + ", media_url=" + media_url + ", pixelWide=" + pixelWide + ", pixelHeight="
-				+ pixelHeight + ", nbyte=" + nbyte + "]";
+				+ pixelHeight + ", nbyte=" + nbyte + ",resize=" + resize +"]";
 	}
 	
 } 
