@@ -4,7 +4,7 @@ package hv.oop.SpringBootFacebook;
 * 
 *  
 * @author Valeria Calvarese
-* @author Hermes Karalliu
+* 
 */
 import java.io.IOException;
 
@@ -25,9 +25,11 @@ public class SpringBootFacebookApplication
 		{
 		Storage.fill_post(
 				"https://graph.facebook.com/v7.0/PerriSristorantePizzeria/feed?access_token=EAAEBaCJy5BwBAIruMFDGMl91xciu9nbcXZCEl4o6hxWgiV0IW2gZAVcFZCVtZC7Wzz31z5WVZCJoEdX0OeLHU5NZBc2dZAL0SaliVY2jkq9ioI5PQ6rFxA61fGssIN3HP2WMkKudehNctbQYY8ql1Lw7cr07CjE3JToP9kH53BjXAZDZD");
-		}
-	catch (MalformedURLException e)
-		{
+		
+		Storage.fill_foto("https://graph.facebook.com/v7.0/PerriSristorantePizzeria/feed?fields=full_picture&access_token=EAAEBaCJy5BwBAIruMFDGMl91xciu9nbcXZCEl4o6hxWgiV0IW2gZAVcFZCVtZC7Wzz31z5WVZCJoEdX0OeLHU5NZBc2dZAL0SaliVY2jkq9ioI5PQ6rFxA61fGssIN3HP2WMkKudehNctbQYY8ql1Lw7cr07CjE3JToP9kH53BjXAZDZD");
+			}
+			catch (MalformedURLException e)
+ 		{
 		e.printStackTrace();
 		}
 		
@@ -40,8 +42,10 @@ public class SpringBootFacebookApplication
 		{
 		e.printStackTrace();
 		}
-		
+		{
 		SpringApplication.run(SpringBootFacebookApplication.class, args);
-	
+		}
+	}
 }
-}
+		
+
