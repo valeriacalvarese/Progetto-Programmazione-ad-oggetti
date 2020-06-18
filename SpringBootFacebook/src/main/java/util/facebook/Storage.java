@@ -4,7 +4,7 @@ package util.facebook;
 /** 
  *  
 * @author Valeria Calvarese
-* @author Hermes Karalliu
+* 
 */
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -48,6 +48,46 @@ public class Storage
 	}
 	
 	
+	public static void fill_foto(String string2) throws MalformedURLException, IOException, JSONException
+	{
+		//controllo eccezioni
+		try 
+		{
+			foto= Parsing.getFoto(string2);
+		}
+		 catch (MalformedURLException e)
+		 {
+			 e.printStackTrace();
+		 }
+		 
+		 catch (IOException e)
+		 {
+			 e.printStackTrace();
+		 }
+		catch(JSONException e) 
+		{
+			e.printStackTrace();
+		} 	
+	}
+	
+	
+	public static ArrayList<Post> get_post() {
+		// TODO Auto-generated method stub
+		return post;
+	}
+	public static ArrayList<Foto> get_Foto(){
+		
+		foto.add(new Foto("id","String","identificator"));
+		foto.add(new Foto("media_url","String","media url"));
+		foto.add(new Foto("pixelHeight","int","dimensione altezza"));
+		foto.add(new Foto("pixelWidth","int","dimensione larghezza"));
+		foto.add(new Foto("nbyte","int","numero byte"));
+		foto.add(new Foto("resize","int"," dimensione"));
+		foto.add(new Foto("full_picture","String","picture"));
+		
+			return foto;
+		
+	}
 	public static ArrayList<Metadati> fill_Metadati() {
 		// TODO Auto-generated method stub
 		metadati.add(new Metadati("id","String","identificator"));
@@ -62,14 +102,5 @@ public class Storage
 		return metadati;
 	}
 
-	public static ArrayList<Post> get_post() {
-		// TODO Auto-generated method stub
-		return post;
-	}
-	public static ArrayList<Foto> get_Foto(){
-		
-			return foto;
-		
-	}
 	
 }

@@ -1,10 +1,9 @@
 package util.facebook;
 
-/** Il parsing analizza i dati d'ingresso
- 
+/** il parsing analizza i dati d'ingresso;
  *  
 * @author Valeria Calvarese
-* @author Hermes Karalliu
+* 
 */
 
 
@@ -12,7 +11,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
-import model.facebook.*;
+import model.facebook.Post;
+import model.facebook.Foto;
+
+import util.facebook.Parsing;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -63,6 +66,41 @@ public class Parsing {
 						 
 			 }
 			 return post;
-		 }
+	 	 }
+			 public static ArrayList<Foto> getFoto(String link) throws MalformedURLException, IOException, JSONException
+		 	 {
+				 String url =null;
+				 ArrayList<Foto> foto = new ArrayList<Foto>();
+				 //Controllo eccezioni con try-catch
+				 try {
+					 url = Reading.read_url (link);
+				  }
+				 catch (MalformedURLException e) {
+					 e.printStackTrace();
+				 }
+				 catch (IOException e) {
+					 e.printStackTrace();
+				 }
+				 
+				 
+				  JSONObject object =null;
+				 try {
+					 object =new JSONObject(url);
+				 }
+				 catch (JSONException e){
+					 e.printStackTrace ();
+				 }
+				 
+				 JSONArray array = object.getJSONArray("data");
+				 for (int i=0; i<array.length(); i++)
+				 {
+					 JSONObject o4 = object.getJSONArray("data").getJSONObject(i);
+					 ObjectMapper o5 =new ObjectMapper ();
+					 Foto o6  = o5.readValue(o4.toString(), Foto.class);
+					 foto.add(o6);
+				 }
+				 
+				 
+			 return foto; }
 	}
 

@@ -5,7 +5,7 @@ package util.facebook;
 
  *  
 * @author Valeria Calvarese
-* @author Hermes Karalliu
+* 
 */
 import java.io.IOException;
 import java.net.MalformedURLException;
