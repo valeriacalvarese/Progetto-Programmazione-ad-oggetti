@@ -1,11 +1,7 @@
 package model.facebook;
 
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import util.facebook.Parsing;
-import util.facebook.Storage;
-import hv.oop.SpringBootFacebook.controller.*;
+
 
 /** Classe che descrive i post di facebook;
   * 
@@ -19,6 +15,7 @@ public class Post {
 	private String created_time;
 	private String story;
 	private String full_picture;
+	private Boolean ContainPhoto;
 	
 	
 	
@@ -31,6 +28,7 @@ public class Post {
 		this.created_time = null;
 		this.story =null;
 		this.full_picture = null ;
+		this.ContainPhoto =null;
 		
 	}
 	
@@ -77,10 +75,15 @@ public class Post {
 	this.full_picture = full_picture;
 	}
 
+	
+	public Boolean getContainPhoto() {
+		return ContainPhoto;
+	}
 
-	public void setContainPhoto(boolean b) {
-		// TODO Auto-generated method stub
-		
+
+
+	public void setContainPhoto(Boolean b) {
+		this.ContainPhoto=b;
 	}
 	
 }
