@@ -1,19 +1,26 @@
 package model.facebook;
 
- /** Classe che descrive i post di facebook;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import util.facebook.Parsing;
+import util.facebook.Storage;
+import hv.oop.SpringBootFacebook.controller.*;
+
+/** Classe che descrive i post di facebook;
   * 
   * @author Valeria Calvarese
-  * @author Hermes Karalliu
   */
+
 public class Post {
+	
 	private String id; 
 	private String message;
 	private String created_time;
 	private String story;
-	private int pixelHeigth;
-	private int pixelWidth;
-	private String resize;
-	private int nbyte;
+	private String full_picture;
+	
+	
 	
 	
 	//costruttore;
@@ -23,28 +30,29 @@ public class Post {
 		this.message= null;
 		this.created_time = null;
 		this.story =null;
-		this.pixelHeigth =0;
-		this.pixelWidth= 0;
-		this.resize = null;
-		this.nbyte = 0;
-	
+		this.full_picture = null ;
+		
 	}
-	//metodi get e set utilizzati per modificare e visualizzare le variabili;
 	
 	
-	public String getid() 
-	{
+	
+	public String getId() {
 		return id;
 	}
-	public void setid(String id)
-	{
+
+
+
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getmessage()
+
+
+
+	public String getMessage()
 	{
 		return message;
 	}
-	public void setmessage(String message)
+	public void setMessage(String message)
 	{
 		this.message = message;
 	}
@@ -56,63 +64,24 @@ public class Post {
 	{
 		this.created_time = created_time;
 	}
-
-
 	public String getStory() {
 		return story;
 	}
-
-
 	public void setStory(String story) {
 		this.story = story;
 	}
-
-
-	public int getPixelHeigth() {
-		return pixelHeigth;
+	public String getFull_picture() {
+	return full_picture;
+	}
+	public void setFull_picture(String full_picture) {
+	this.full_picture = full_picture;
 	}
 
 
-	public void setPixelHeigth(int pixelHeigth) {
-		this.pixelHeigth = pixelHeigth;
+	public void setContainPhoto(boolean b) {
+		// TODO Auto-generated method stub
+		
 	}
-
-
-	public int getPixelWidth() {
-		return pixelWidth;
-	}
-
-
-	public void setPixelWidth(int pixelWidth) {
-		this.pixelWidth = pixelWidth;
-	}
-
-
-	public String getResize() {
-		return resize;
-	}
-
-
-	public void setResize(String resize) {
-		this.resize = resize;
-	}
-
-
-	public int getNbyte() {
-		return nbyte;
-	}
-
-
-	public void setNbyte(int nbyte) {
-		this.nbyte = nbyte;
-	}
-	
-	
-
-	
-
-	
-	
-	
 	
 }
+
