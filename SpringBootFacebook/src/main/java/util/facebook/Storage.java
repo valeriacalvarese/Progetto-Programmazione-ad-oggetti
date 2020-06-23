@@ -1,6 +1,5 @@
 package util.facebook;
 
-
 /** 
  *  
 * @author Valeria Calvarese
@@ -12,9 +11,8 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 
-import model.facebook.Metadati;
-import model.facebook.Post;
-import model.facebook.Foto;
+import model.facebook.*;
+
 
 
 public class Storage
@@ -22,7 +20,7 @@ public class Storage
 	
 	public static ArrayList<Metadati> metadati = new ArrayList<Metadati>();
 	public static ArrayList<Post> post = new ArrayList<Post>();
-	public static ArrayList<Foto> foto = new ArrayList<Foto>();
+	public static ArrayList<Post> foto = new ArrayList<Post>();
 	
 	public static void fill_post(String string1) throws MalformedURLException, IOException, JSONException
 	{
@@ -70,24 +68,16 @@ public class Storage
 		} 	
 	}
 	
-	
 	public static ArrayList<Post> get_post() {
-		// TODO Auto-generated method stub
 		return post;
 	}
-	public static ArrayList<Foto> get_Foto(){
-		
-		foto.add(new Foto("id","String","identificator"));
-		foto.add(new Foto("media_url","String","media url"));
-		foto.add(new Foto("pixelHeight","int","dimensione altezza"));
-		foto.add(new Foto("pixelWidth","int","dimensione larghezza"));
-		foto.add(new Foto("nbyte","int","numero byte"));
-		foto.add(new Foto("resize","int"," dimensione"));
-		foto.add(new Foto("full_picture","String","picture"));
+	public static ArrayList<Post> get_foto(){
 		
 			return foto;
 		
 	}
+	
+	
 	public static ArrayList<Metadati> fill_Metadati() {
 		// TODO Auto-generated method stub
 		metadati.add(new Metadati("id","String","identificator"));
