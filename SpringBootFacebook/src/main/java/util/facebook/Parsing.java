@@ -81,7 +81,8 @@ public class Parsing {
 		 //Controllo eccezioni con try-catch 
 		 try 
 		 {
-			 URL url1 = new URL("https://graph.facebook.com/v7.0/PerriSristorantePizzeria/feed?fields=full_picture&access_token=EAAEBaCJy5BwBAIruMFDGMl91xciu9nbcXZCEl4o6hxWgiV0IW2gZAVcFZCVtZC7Wzz31z5WVZCJoEdX0OeLHU5NZBc2dZAL0SaliVY2jkq9ioI5PQ6rFxA61fGssIN3HP2WMkKudehNctbQYY8ql1Lw7cr07CjE3JToP9kH53BjXAZDZD");
+			 url = Reading.read_url (link);
+			 //URL url1 = new URL("https://graph.facebook.com/v7.0/PerriSristorantePizzeria/feed?fields=full_picture&access_token=EAAEBaCJy5BwBAIruMFDGMl91xciu9nbcXZCEl4o6hxWgiV0IW2gZAVcFZCVtZC7Wzz31z5WVZCJoEdX0OeLHU5NZBc2dZAL0SaliVY2jkq9ioI5PQ6rFxA61fGssIN3HP2WMkKudehNctbQYY8ql1Lw7cr07CjE3JToP9kH53BjXAZDZD");
 			 
 		 }
 		 catch (MalformedURLException e)
@@ -111,27 +112,32 @@ public class Parsing {
 					 
 		 }
 		 return foto;
+		 
 	 }
+	 
 
-	static boolean ContainPhoto()
+	public static void ContainPhoto(ArrayList<Post> post, ArrayList<Post> a)
 	{
 	int j=0; 
 		//array che contine i link delle foto
-		ArrayList<Post> a;
+		
 		
 		for(int i=0;i<a.size();i++)
 		{ 
 
-			while (a.get(i).getId.compareTo(post.get(j).getId)!=0 || j<post.size()) 
+			for (j=0; j<post.size(); j++) 
 			{
-				j++; 
-				if(j<post.size()) 
-					{
-						  post.get(j).setContainPhoto(true); 
-					}
+				if(a.get(i).getId().compareTo(post.get(j).getId())==0)
+				{
+					post.get(j).setContainPhoto(true); 
+					post.get(j).setFull_picture(a.get(i).getFull_picture());
+				}
 			}
+			
+
 		}
-	}  
+		
+	}   
 }
 
 			

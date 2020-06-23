@@ -24,10 +24,12 @@ public class Storage
 	
 	public static void fill_post(String string1) throws MalformedURLException, IOException, JSONException
 	{
-		//controllo eccezioni
+		//controllo eccezioni	
 		try 
 		{
+			
 			post= Parsing.getPost(string1);
+			
 		}
 		 catch (MalformedURLException e)
 		 {
@@ -46,14 +48,14 @@ public class Storage
 	}
 	
 	
-	public static void fill_foto(String string2) throws MalformedURLException, IOException, JSONException
-	{
+	public static void fill_foto(String string2) throws JSONException, MalformedURLException, IOException
+		{
 		//controllo eccezioni
 		try 
 		{
 			foto= Parsing.getFoto(string2);
 		}
-		 catch (MalformedURLException e)
+		catch (MalformedURLException e)
 		 {
 			 e.printStackTrace();
 		 }
@@ -62,11 +64,13 @@ public class Storage
 		 {
 			 e.printStackTrace();
 		 }
-		catch(JSONException e) 
+		 catch(JSONException e) 
 		{
 			e.printStackTrace();
 		} 	
 	}
+	
+	
 	
 	public static ArrayList<Post> get_post() {
 		return post;
@@ -78,19 +82,15 @@ public class Storage
 	}
 	
 	
-	public static ArrayList<Metadati> fill_Metadati() {
+	
+	public static ArrayList<Metedati> fill_Metadati() {
 		// TODO Auto-generated method stub
 		metadati.add(new Metadati("id","String","identificator"));
 		metadati.add(new Metadati("message","String","description"));
 		metadati.add(new Metadati("create_time","String","whenwaspublished"));
-		metadati.add(new Metadati("story","String","richiamo"));
-		metadati.add(new Metadati("size","ArrayList","dimensioni relativa all'immagine"));
-		metadati.add(new Metadati("height","int","altezza relativa all'immagine"));
-		metadati.add(new Metadati("width","int","larghezza relativa all'immagine"));
-		metadati.add(new Metadati("resize","String","ridimensioni immagine"));
-		
-		return metadati;
+		metadati.add(new Metadati("story","String","tag"));
+	
+	return metadati;
 	}
-
 	
 }
