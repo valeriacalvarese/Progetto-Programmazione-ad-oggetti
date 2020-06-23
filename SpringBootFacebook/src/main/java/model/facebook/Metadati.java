@@ -1,6 +1,12 @@
 package model.facebook;
 
 
+/*
+ * *  
+* @author Valeria Calvarese
+*
+*/
+
 public class Metadati 
 
 //Classe che restiuisce i metadati(formato json), ovvero l'elenco degli attributi e del tipo della classe;
@@ -15,8 +21,6 @@ public class Metadati
 		this.name = name;
 		this.type =type;
 		this.property= property;
-		
-		
 	}
 
 	public String getName() {
@@ -42,8 +46,6 @@ public class Metadati
 	public void setProperty(String property) {
 		this.property = property;
 	}
-
-	
 	
 
 	public String getStory() {
