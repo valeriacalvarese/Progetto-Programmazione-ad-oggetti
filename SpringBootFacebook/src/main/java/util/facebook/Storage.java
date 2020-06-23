@@ -83,14 +83,24 @@ public class Storage
 	
 	
 	
-	public static ArrayList<Metedati> fill_Metadati() {
-		// TODO Auto-generated method stub
+	public static void fill_Metadati() {
+		
 		metadati.add(new Metadati("id","String","identificator"));
 		metadati.add(new Metadati("message","String","description"));
 		metadati.add(new Metadati("create_time","String","whenwaspublished"));
 		metadati.add(new Metadati("story","String","tag"));
-	
-	return metadati;
+		metadati.add(new Metadati("full_picture","String","link immagine"));
+		metadati.add(new Metadati("Containphoto","boolean","vero se è una foto"));
+		
+		
+		
 	}
+	
+	//array che restituisce i metadati
+	public static ArrayList<Metadati> get_Metadati()
+	{
+		return metadati;
+	}
+
 	
 }
