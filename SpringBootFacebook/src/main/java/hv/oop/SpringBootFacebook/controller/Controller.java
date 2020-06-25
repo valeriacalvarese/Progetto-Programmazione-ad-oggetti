@@ -8,54 +8,50 @@ package hv.oop.SpringBootFacebook.controller;
 
  
 import java.util.ArrayList;
-
-
+import java.util.Vector;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
 
 import model.facebook.Metadati;
 import model.facebook.Post;
-import model.facebook.Foto;
 import util.facebook.Storage;
 import org.springframework.web.bind.annotation.RestController;
 
 /* 
 *  
 * @author Valeria Calvarese
-* 
 */
 @RestController
 public class Controller 
 {
 	@GetMapping("/post")
-	public ArrayList<Post> getArrayPost()
+	public static ArrayList<Post> getArrayPost()
 	{
 		return Storage.get_post();
 		
 		
 	}
+	
 	//conta numero dei post della pagina;
 	
 	@GetMapping("/tot")
-	public int Count()
+	public String Count()
 	{
-		return getArrayPost().size();
+		
+		return "Il numero totale di post e' : " +getArrayPost().size();
 	}
 	
 	
 	
 	@GetMapping("/metadati")
-	public ArrayList<Metadati> getArrayMetadati()
+	public static ArrayList<Metadati> getArrayMetadati()
 	{
-		return Storage.fill_Metadati();
+		return Storage.get_Metadati();
 	}
 	
-	@GetMapping("/foto")
-	public ArrayList<Foto> getArrayFoto()
-	{
-		return Storage.get_foto();
-	}
+	
+	
 	
 	
 }
