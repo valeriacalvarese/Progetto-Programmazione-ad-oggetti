@@ -1,5 +1,7 @@
 package hv.oop.SpringBootFacebook.controller;
 
+import java.io.IOException;
+
 /** 
  *  
 * @author Valeria Calvarese
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import model.facebook.Metadati;
 import model.facebook.Post;
 import util.facebook.Storage;
+import service.facebook.*;
+
 import org.springframework.web.bind.annotation.RestController;
 
 /* 
@@ -48,6 +52,22 @@ public class Controller
 	public static ArrayList<Metadati> getArrayMetadati()
 	{
 		return Storage.get_Metadati();
+	}
+	
+	@GetMapping ("/maxbytes")
+	public static String MaxByte() throws IOException
+	{
+		
+		Statistics s= new Statistics();
+		return "Il massimo e':" + s.MaxBytes();
+	}
+	
+	@GetMapping ("/minbytes")
+	public static String MinByte() throws IOException
+	{
+		
+		Statistics s= new Statistics();
+		return "Il minimo e':" + s.MinBytes();
 	}
 	
 	
