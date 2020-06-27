@@ -1,6 +1,7 @@
 # Progetto: Spring BootFacebook Application
 
-L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato in seguito sviluppato l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto è presente la Web Application Spring Boot, che permette l'avvio dell'applicazione e, tramite POSTMAN,per effettuare alcune richieste(con GET). 
+L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato sviluppato mediante l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto è presente la Web Application Spring Boot che permette l'avvio dell'applicazione, e POSTMAN utilizzato per effettuare alcune richieste(con GET). 
+
 L'applicazione è in grado di:
  * elencare i post pubblicati sulla pagina ed esprime la presenza dell' immagine (GET);
  * elencare metadata dei post (GET);
@@ -11,7 +12,7 @@ L'applicazione è in grado di:
  ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/NewModel%20Use%20Case%20Diagram.jpg)
 
 ## Avvio Applicazione
-Per poter iniziare bisogna registrare un proprio account Facebook per accedere a Facebook for Developers ed è necessario generare il token di accesso autorizzato per le pagine. (https://developers.facebook.com/docs/pages/publishing).
+Per poter iniziare bisogna registrare un proprio account Facebook su Facebook for Developers ed è necessario generare il token di accesso autorizzato per le pagine. (https://developers.facebook.com/docs/pages/publishing).
 
 In seguito, dopo aver scaricato i software necessari per l'utilizzo (Eclipse, Postman...), bisogna entrare su Eclipse e clonare questo repository GitHub, in basso a destra, nel seguente modo:
  * clone a repository;
@@ -31,8 +32,8 @@ Tipo | Percorso | Descrizione
 GET | /post | Richiesta elenco post e presenza foto nella pagina
 GET | /tot | Richiesta totale numero post nella pagina
 GET | /metadati | Richiesta elenco Metadati
-GET | /maxbytes | Richiesta statistica massimo dei bytes utilizzato da una foto
-GET | /minbytes | Richiesta statistica minimo dei bytes utilizzato da una foto
+GET | /maxbytes | Richiesta statistica massimo dei bytes utilizzati da una foto
+GET | /minbytes | Richiesta statistica minimo dei bytes utilizzati da una foto
 GET | /maxpixel | Richiesta statistica massimo dei pixel utilizzati da una foto
 GET | /minpixel | Richiesta statistica minimo dei pixel utilizzati da una foto
 GET | /AverageBytes | Richiesta media dei bytes delle foto
@@ -46,7 +47,7 @@ GET | /AveragePixel | Richiesta media dei pixel delle foto
  ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/hv.oop.SpringBootApplication%20Class%20Diagram.jpg)
 
 ### Model
-![Logo}(https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/ModelClass%20Diagram.jpg)
+![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/ModelClass%20Diagram.jpg)
 
 ### Util
 ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/Util%20Class%20Diagram.jpg)
