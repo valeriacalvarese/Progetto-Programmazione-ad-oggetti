@@ -9,28 +9,21 @@ package util.facebook;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.util.ArrayList;
 
 import model.facebook.*;
-import util.facebook.*;
-import hv.oop.SpringBootFacebook.controller.*;
-
-
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parsing {
 	 
 
 
-	private static ArrayList<Post> post;
+	
+	
 	public static ArrayList<Post> getPost(String link) throws MalformedURLException, IOException, JSONException
 	 	 {
 			 String url =null;
@@ -119,8 +112,7 @@ public class Parsing {
 	public static void ContainPhoto(ArrayList<Post> post, ArrayList<Post> a)
 	{
 	int j=0; 
-		//array che contine i link delle foto
-		
+				
 		
 		for(int i=0;i<a.size();i++)
 		{ 

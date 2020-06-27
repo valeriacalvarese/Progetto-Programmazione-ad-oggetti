@@ -31,14 +31,14 @@ public class StatsService
 		
 		ArrayList<Integer> Bytes = Statistics.Bytes();
 		
-		int sum=0;
+		float sum=0;
 		 for(int i=0; i<Bytes.size(); i++)
 		{
 			sum +=Bytes.get(i);
 		}
 		 
 		
-		stat.setAvg(sum/ Bytes.size());
+		stat.setAvg(sum/Bytes.size());
 		return stat;
 		
 	}
