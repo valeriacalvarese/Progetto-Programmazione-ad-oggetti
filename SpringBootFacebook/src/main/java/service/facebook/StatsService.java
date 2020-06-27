@@ -1,59 +1,132 @@
 package service.facebook;
 
-import java.util.Vector;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class StatsService 
 {
-	private float AverageByte;
-	private float AveragePixel;
-	
-	private Vector<Integer> bytes = new Vector<>();
-	private Vector<Long> pixel = new Vector<>();
 
-	
-		@Override
-	public String toString() {
-		return "StatsService [AverageByte=" + AverageByte + ", AveragePixel=" + AveragePixel + "]";
-	}
-
-	public float getAverageByte() {
-		return AverageByte;
-	}
-
-	public void setAverageByte(float averageByte) {
-		AverageByte = averageByte;
-	}
-
-	public float getAveragePixel() {
-		return AveragePixel;
-	}
-
-	public void setAveragePixel(float averagePixel) {
-		AveragePixel = averagePixel;
-	}
-	
-	public float AveragePixel()
+	public static Statistics AveragePixel(Statistics stat) throws IOException
 	{
+		
+		ArrayList<Integer> Pixel = Statistics.Pixel();
 		float sum = 0;
-		for (long p : pixel )
+		 for(int i=0; i<Pixel.size(); i++)
 		{
-			sum += p;
+			sum += Pixel.get(i);
 		}
-		return sum/ pixel.size();
+		 
+		
+		stat.setAvg(sum/Pixel.size()) ;
+		return stat;
 		
 	}
 	
 
-	public float AverageBytes()
+	public static Statistics AverageBytes(Statistics stat) throws IOException
 	{
-		float sum = 0;
-		for (long b : bytes )
+		
+		
+		ArrayList<Integer> Bytes = Statistics.Bytes();
+		
+		int sum=0;
+		 for(int i=0; i<Bytes.size(); i++)
 		{
-			sum += b;
+			sum +=Bytes.get(i);
 		}
-		return sum/ bytes.size();
+		 
+		
+		stat.setAvg(sum/ Bytes.size());
+		return stat;
 		
 	}
+	
+    
+    
+public static Statistics MaxBytes (Statistics stat) throws IOException 
+    {
+	ArrayList<Integer> Bytes = Statistics.Bytes();
+	int max=0;
+    for(int i=0; i<Bytes.size() ; i++) 
+    			{
+    
+ 	   		
+ 	   			if(Bytes.get(i) > max)
+ 	    	          {
+ 	    	               max= Bytes.get(i);
+ 	    	           }
+ 	   			    	   		
+ 	   		} 
+     	stat.setMax(max);
+     	return stat;
+    	}
+
+
+
+public static Statistics MinBytes (Statistics stat) throws IOException
+{
+	
+	ArrayList<Integer> Bytes = Statistics.Bytes();
+	int min= MaxBytes(stat).getMax();
+	for(int i=0; i<Bytes.size() ;i++) 
+			{
+ 	   		
+ 	   			if(Bytes.get(i)< min)
+ 	    	          {
+ 	    	               min= Bytes.get(i);
+ 	    	           }
+ 	   		
+ 	   		
+ 	  	  }
+	stat.setMin(min);
+		stat.setMax(0);
+     	return stat;    
+}
+
+public static Statistics MaxPixel (Statistics stat) throws IOException 
+{
+ArrayList<Integer> Pixel = Statistics.Pixel();
+int max=0;
+for(int i=0; i<Pixel.size() ; i++) 
+			{
+
+	   		
+	   			if(Pixel.get(i) > max)
+	    	          {
+	    	               max= Pixel.get(i);
+	    	           }
+	   			    	   		
+	   		} 
+ 	stat.setMax(max);
+ 	return stat;
+	}
+
+
+
+public static Statistics MinPixel (Statistics stat) throws IOException
+{
+
+ArrayList<Integer> Pixel = Statistics.Pixel();
+int min= MaxPixel(stat).getMax();
+for(int i=0; i<Pixel.size() ;i++) 
+		{
+	   		
+	   			if(Pixel.get(i)< min)
+	    	          {
+	    	               min= Pixel.get(i);
+	    	           }
+	   		
+	   		
+	  	  }
+stat.setMin(min);
+	stat.setMax(0);
+ 	return stat;    
+}
+
+
 	
 
 }
+

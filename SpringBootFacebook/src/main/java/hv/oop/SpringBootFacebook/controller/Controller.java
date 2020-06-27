@@ -10,7 +10,7 @@ import java.io.IOException;
 
  
 import java.util.ArrayList;
-import java.util.Vector;
+
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller 
 {
+	//Elenco dei post della pagina
 	@GetMapping("/post")
 	public static ArrayList<Post> getArrayPost()
 	{
@@ -37,7 +38,7 @@ public class Controller
 		
 	}
 	
-	//conta numero dei post della pagina;
+	//Conta numero dei post della pagina
 	
 	@GetMapping("/tot")
 	public String Count()
@@ -47,29 +48,62 @@ public class Controller
 	}
 	
 	
-	
+	//Elenco Metadati della pagina
 	@GetMapping("/metadati")
 	public static ArrayList<Metadati> getArrayMetadati()
 	{
 		return Storage.get_Metadati();
 	}
 	
+	//Max Bytes di una foto
 	@GetMapping ("/maxbytes")
-	public static String MaxByte() throws IOException
+	public static Statistics  MaxByte() throws IOException
 	{
 		
 		Statistics s= new Statistics();
-		return "Il massimo e':" + s.MaxBytes();
+		return StatsService.MaxBytes(s);
 	}
-	
+	//Min Bytes di una foto
 	@GetMapping ("/minbytes")
-	public static String MinByte() throws IOException
+	public static Statistics MinByte() throws IOException
 	{
 		
 		Statistics s= new Statistics();
-		return "Il minimo e':" + s.MinBytes();
+		return StatsService.MinBytes(s);
 	}
 	
+	//Max Pixel di una foto
+		@GetMapping ("/maxpixel")
+		public static Statistics  MaxPixel() throws IOException
+		{
+			
+			Statistics s= new Statistics();
+			return StatsService.MaxPixel(s);
+		}
+		//Min Pixel di una foto
+		@GetMapping ("/minpixel")
+		public static Statistics MinPixel() throws IOException
+		{
+			
+			Statistics s= new Statistics();
+			return StatsService.MinPixel(s);
+		}
+	
+	@GetMapping ("AveragePixel")
+	  //Media dei Pixel
+	public static Statistics AveragePixel() throws IOException 
+	{
+		Statistics s = new Statistics();
+		return StatsService.AveragePixel(s);
+	}
+	
+	//Media dei Bytes
+	@GetMapping ("AverageBytes")
+	public static Statistics AverageBytes() throws IOException 
+	{
+		Statistics s = new Statistics ();
+		return StatsService.AverageBytes(s);
+	}
 	
 	
 	

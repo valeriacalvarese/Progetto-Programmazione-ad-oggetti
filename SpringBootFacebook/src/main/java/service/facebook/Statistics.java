@@ -1,16 +1,16 @@
 package service.facebook;
 
 import model.facebook.*;
-import hv.oop.*;
+
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
+
 import java.net.URL;
 import java.net.URLConnection;
-import java.nio.ByteBuffer;
+
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -19,37 +19,82 @@ import util.facebook.*;
 
 public class Statistics {
 	
-		
-	public static ArrayList<byte[]> Bytes() throws IOException 
+	private int max;
+	private int min;
+	private float avg;
+	
+	public Statistics(int max, int min, int avg)
 	{
-		ArrayList<byte[]> Bytes = new ArrayList<byte[]>();
+		this.max =max;
+		this.min=min;
+		this.avg=avg;
+	}
+	
+	public Statistics()
+	{
+		this.max=0;
+		this.min=0;
+		this.avg=0;
+	}	
+	
+	
+		
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+	public int getMin() {
+		return min;
+	}
+
+	public void setMin(int min) {
+		this.min = min;
+	}
+
+	public float getAvg() {
+		return avg;
+	}
+
+	public void setAvg(float avg) {
+		this.avg = avg;
+	}
+
+		//ArrayList che contiene i Bytes delle foto
+	public static ArrayList<Integer> Bytes() throws IOException 
+	{
+		ArrayList<Integer> Bytes = new ArrayList<Integer>();
 		ArrayList<Post> getFoto = Storage.get_foto();
 			       for(int i=0; i<getFoto.size(); i++)
 	    	  {
 	    	   	URL url = new URL(getFoto.get(i).getFull_picture());
-	    	   	ByteArrayOutputStream output = new ByteArrayOutputStream();
+	    	   ByteArrayOutputStream output = new ByteArrayOutputStream();
 	    	   	URLConnection conn = url.openConnection();
 	    	   	conn.setRequestProperty("User-Agent", "Firefox");
 		       
-	    	   		try (InputStream inputStream = conn.getInputStream())
-	    	   			{
-	    	   				int n = 0;
-	    	   				byte[] buffer = new byte[1024];
-	    	   				while (-1 != (n = inputStream.read(buffer))) 
-	    	   					{
-	    	   						output.write(buffer, 0, n);
-	    	   					}
-	    	   			}
-		         catch (IOException e)
-	    	   			{
-		        	 		e.printStackTrace();
-	    	   			}
-	    	   		byte[] img = output.toByteArray();
-	    	   		ByteBuffer imagBytes = ByteBuffer.wrap(img);
+	    	   		 InputStream inputStream = conn.getInputStream();
+	    	   		
+			           ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+			           ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			          
+			           byte[] b = new byte[2^16];
+			           int read = inputStream.read(b);
+			           while (read > -1) {
+			               baos.write(b, 0, read);
+			               read = inputStream.read(b);
+			           }
+			           int size = baos.toByteArray().length;
+			           Bytes.add(size);
+
 	    	  }	
 			       return Bytes;
 	    	}
 	
+		//ArrayList che contiene i pixel delle foto
 	      public static ArrayList<Integer> Pixel() throws IOException 
 	       {
 	    	   
@@ -72,45 +117,7 @@ public class Statistics {
 	    	return Pixel;
 	   }
 	       
-	       
-	       
-/*	       public int MaxBytes () 
-	       {
-	       for(int i=0; i< ; i++) 
-	       			{
-	       int max=0;
-	    	   		
-	    	   			if(img[i] > max)
-	    	    	          {
-	    	    	               max= img[i];
-	    	    	           }
-	    	   			    	   		
-	    	   		} 
-	        	return max;    
-	       	}
-	
-	
-	
-	public int MinBytes () throws IOException
-	{
-		ArrayList<Post> getFoto = Storage.get_foto();
-		int min= MaxBytes();
-		for(int i=0; i< ;i++) 
-				{
-	    	   		
-	    	   			if(img[i] < min)
-	    	    	          {
-	    	    	               min= img[i];
-	    	    	           }
-	    	   		
-	    	   		
-	    	  	  }
-	
-	        	return min;    
-	}
 
-
-*/
 	
 	
 }
