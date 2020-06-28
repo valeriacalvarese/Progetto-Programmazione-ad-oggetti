@@ -1,12 +1,12 @@
 # Progetto: Spring BootFacebook Application
 
-L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato sviluppato mediante l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto sono presenti la Web Application Spring Boot che permette l'avvio dell'applicazione, e POSTMAN utilizzato per effettuare alcune richieste(con GET). 
+L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato sviluppato mediante l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto è presente la Web Application Spring Boot che all'avvio dell'applicazione permette di utilizzare POSTMAN per effettuare alcune richieste(con GET). 
 
 L'applicazione è in grado di:
  * elencare i post pubblicati sulla pagina ed esprime la presenza dell' immagine (GET);
  * elencare metadata dei post (GET);
  * calcolare il numero totale di post (GET);
- * ottenere delle statistiche sui contenuti dei post in formato JSON (GET).
+ * ottenere delle statistiche sui pixel e bytes delle foto presenti nei post in formato JSON (GET).
  
  ## Diagramma Casi D'uso
  ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/NewModel%20Use%20Case%20Diagram.jpg)
