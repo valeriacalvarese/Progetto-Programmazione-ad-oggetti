@@ -22,6 +22,14 @@ public class Storage
 	public static ArrayList<Post> post = new ArrayList<Post>();
 	public static ArrayList<Post> foto = new ArrayList<Post>();
 	
+	/* dopo il parsing salvo l'array dei posts
+	 * @param str,url del parsing
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 * @throws JSONException 
+	 *  
+	*/
+	
 	public static void fill_post(String string1) throws MalformedURLException, IOException, JSONException
 	{
 		//controllo eccezioni	
@@ -70,18 +78,26 @@ public class Storage
 		} 	
 	}
 	
-	
+	/*
+	 * @return array post
+	 */
 	
 	public static ArrayList<Post> get_post() {
 		return post;
 	}
-	public static ArrayList<Post> get_foto(){
+	/*
+	 * @return array foto
+	 */
+public static ArrayList<Post> get_foto(){
 		
 			return foto;
 		
 	}
 	
-	
+/* dopo il parsing salvo l'array dei posts
+ * @return metadata
+ *  
+*/
 	
 	public static void fill_Metadati() {
 		
@@ -96,7 +112,10 @@ public class Storage
 		
 	}
 	
-	//array che restituisce i metadati
+	/*array che restituisce i metadati
+	 * 
+	 * @return array metadati
+	 */
 	public static ArrayList<Metadati> get_Metadati()
 	{
 		return metadati;
