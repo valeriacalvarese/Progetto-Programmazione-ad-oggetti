@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"hv.oop.SpringBootFacebook"},{"l":"hv.oop.SpringBootFacebook.controller"},{"l":"model.facebook"},{"l":"service.facebook"},{"l":"util.facebook"}]
