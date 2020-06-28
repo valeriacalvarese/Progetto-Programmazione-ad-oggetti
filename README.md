@@ -56,13 +56,15 @@ GET | /AveragePixel | Richiesta media dei pixel delle foto
 ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/Service%20Class%20Diagram.jpg)
 
 ## Software utilizzati
-* Eclipse - Ambiente di sviluppo
-* UML Designer - software per la realizzazione dei diagrammi UML
-* Maven - software di gestione di progetti
-* Spring Boot - framework per sviluppo di applicazioni in Java
+* [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo
+* [UML Designer](http://www.umldesigner.org/) - software per la realizzazione dei diagrammi UML
+* [Maven](https://maven.apache.org/) - software di gestione di progetti e librerie
+* [Spring Boot](https://spring.io/projects/spring-boot) - framework per sviluppo di applicazioni in Java
+* [Postman](https://www.postman.com/) - ambiente di sviluppo API per effettuare richieste
+
 
 ## Autore
-Calvarese Valeria : https://github.com/valeriacalvarese
+[Calvarese Valeria](https://github.com/valeriacalvarese)
 
 
 
