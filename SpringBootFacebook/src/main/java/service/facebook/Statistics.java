@@ -23,6 +23,7 @@ public class Statistics {
 	private int min;
 	private float avg;
 	
+	//costuttore
 	public Statistics(int max, int min, int avg)
 	{
 		this.max =max;
@@ -37,7 +38,7 @@ public class Statistics {
 		this.avg=0;
 	}	
 	
-	
+	//metodi Getters and  Setters
 		
 	public int getMax() {
 		return max;
