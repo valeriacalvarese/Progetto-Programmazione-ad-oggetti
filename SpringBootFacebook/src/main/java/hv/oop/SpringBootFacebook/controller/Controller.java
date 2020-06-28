@@ -5,7 +5,6 @@ import java.io.IOException;
 /** 
  *  
 * @author Valeria Calvarese
-* @author Hermes Karalliu
 */
 
  
@@ -22,14 +21,14 @@ import service.facebook.*;
 
 import org.springframework.web.bind.annotation.RestController;
 
-/* 
+/**
 *  
 * @author Valeria Calvarese
 */
 @RestController
 public class Controller 
 {
-	/*Elenco dei post della pagina
+	/**Elenco dei post della pagina
 	 * @return elenco dei post con presenza di foto
 	 */
 	@GetMapping("/post")
@@ -41,23 +40,22 @@ public class Controller
 	}
 	
 	/**Conta numero dei post della pagina
-	 ** 
-	 ** @return numero totale dei post
-	**/
+	 * 
+	 * @return numero totale dei post
+	*/
 	
 	@GetMapping("/tot")
-	public static Post Count()
+	public String Count()
 	{
 		
-		Post p = new Post();
-		return Post.Count;
+		return "Il numero totale di post e' : " +getArrayPost().size();
 	}
 	
 	
 	/**Elenco Metadati della pagina
-	 ** 
-	 ** @return elenco dei metadata
-	 **/
+	 * 
+	 * @return elenco dei metadata
+	 */
 	@GetMapping("/metadati")
 	public static ArrayList<Metadati> getArrayMetadati()
 	{
@@ -65,8 +63,8 @@ public class Controller
 	}
 	
 	/**Max Bytes di una foto
-	 ** @return massimo bytes occupato da una foto
-	**/
+	 * @return massimo bytes occupato da una foto
+	*/
 	@GetMapping ("/maxbytes")
 	public static Statistics  MaxByte() throws IOException
 	{
@@ -75,9 +73,9 @@ public class Controller
 		return StatsService.MaxBytes(s);
 	}
 	/**Min Bytes di una foto
-	 ** 
-	 ** @return minimo bytes occupato da una foto
-	**/
+	 * 
+	 * @return minimo bytes occupato da una foto
+	*/
 	@GetMapping ("/minbytes")
 	public static Statistics MinByte() throws IOException
 	{
@@ -87,8 +85,8 @@ public class Controller
 	}
 	
 	/**Max Pixel di una foto
-	  ** @return massimo dei pixel occupato da una foto
-	**/
+	  * @return massimo dei pixel occupato da una foto
+	*/
 		@GetMapping ("/maxpixel")
 		public static Statistics  MaxPixel() throws IOException
 		{
@@ -97,8 +95,8 @@ public class Controller
 			return StatsService.MaxPixel(s);
 		}
 		/**Min Pixel di una foto
-		  ** @return minimo dei pixel occupato da una foto
-		**/
+		  * @return minimo dei pixel occupato da una foto
+		*/
 		@GetMapping ("/minpixel")
 		public static Statistics MinPixel() throws IOException
 		{
@@ -109,8 +107,8 @@ public class Controller
 	
 	@GetMapping ("AveragePixel")
 	  /**Media dei Pixel
-	 ** @return media dei pixel	
-	 **/
+	 * @return media dei pixel	
+	 */
 	
 	public static Statistics AveragePixel() throws IOException 
 	{
@@ -119,8 +117,8 @@ public class Controller
 	}
 	
 	/**Media dei Bytes
-	 ** @return media dei bytes 
-	**/
+	 * @return media dei bytes 
+	*/
 	@GetMapping ("AverageBytes")
 	public static Statistics AverageBytes() throws IOException 
 	{
