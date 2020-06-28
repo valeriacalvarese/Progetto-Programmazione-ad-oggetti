@@ -1,20 +1,17 @@
 package service.facebook;
 
-/* 
- *  
-* @author Valeria Calvarese
-* 
-*/
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class StatsService 
-{
-  
-	/** metodo che restituisce la media dei pixel
-	 **  @return avg
-	 **/
+{ 
+	 /**
+	  * metodo per la media dei pixel
+	  * @return mediapixel
+	  */
+
 	public static Statistics AveragePixel(Statistics stat) throws IOException
 	{
 		
@@ -30,10 +27,12 @@ public class StatsService
 		return stat;
 		
 	}
+	/**
+	  * metodo per la media dei bytes
+	  * @return mediabytes
+	  */
 	
-	/** metodo che restituisce la media dei bytes
-	 **  @return avg
-	 **/
+
 	public static Statistics AverageBytes(Statistics stat) throws IOException
 	{
 		
@@ -52,10 +51,12 @@ public class StatsService
 		
 	}
 	
+	/**
+	  * metodo per il max dei bytes
+	  * @return maxbytes
+	  */
     
-	/** metodo che restituisce massimo di bytes usati per una foto
-	 **  @return max
-	 **/
+    
 public static Statistics MaxBytes (Statistics stat) throws IOException 
     {
 	ArrayList<Integer> Bytes = Statistics.Bytes();
@@ -73,11 +74,12 @@ public static Statistics MaxBytes (Statistics stat) throws IOException
      	stat.setMax(max);
      	return stat;
     	}
+/**
+ * metodo per il min dei bytes
+ * @return minbytes
+ */
 
 
-/** metodo che restituisce minimo di bytes usati per una foto
- **  @return min
- **/
 public static Statistics MinBytes (Statistics stat) throws IOException
 {
 	
@@ -98,9 +100,10 @@ public static Statistics MinBytes (Statistics stat) throws IOException
      	return stat;    
 }
 
-/** metodo che restituisce massimo dei pixel usati per una foto
- **  @return max
- **/
+/**
+ * metodo per il max dei pixel
+ * @return maxpixel
+ */
 public static Statistics MaxPixel (Statistics stat) throws IOException 
 {
 ArrayList<Integer> Pixel = Statistics.Pixel();
@@ -119,10 +122,11 @@ for(int i=0; i<Pixel.size() ; i++)
  	return stat;
 	}
 
-/** metodo che restituisce minimo dei pixel usati per una foto
- **  @return min
- **/
 
+/**
+ * metodo per il min dei pixel
+ * @return minpixel
+ */
 public static Statistics MinPixel (Statistics stat) throws IOException
 {
 

@@ -1,10 +1,5 @@
 package service.facebook;
 
-/* 
- *  
-* @author Valeria Calvarese
-* 
-*/
 import model.facebook.*;
 
 
@@ -28,7 +23,6 @@ public class Statistics {
 	private int min;
 	private float avg;
 	
-	//costuttore
 	public Statistics(int max, int min, int avg)
 	{
 		this.max =max;
@@ -43,7 +37,10 @@ public class Statistics {
 		this.avg=0;
 	}	
 	
-	//metodi Getters and  Setters
+	/**
+	 * metodi Getters and Setters
+	 */
+	
 		
 	public int getMax() {
 		return max;
@@ -69,7 +66,9 @@ public class Statistics {
 		this.avg = avg;
 	}
 
-		//ArrayList che contiene i Bytes delle foto
+		/**ArrayList che contiene i Bytes delle foto
+		 *  @return arraylist bytes
+		 */
 	public static ArrayList<Integer> Bytes() throws IOException 
 	{
 		ArrayList<Integer> Bytes = new ArrayList<Integer>();
@@ -100,7 +99,9 @@ public class Statistics {
 			       return Bytes;
 	    	}
 	
-		//ArrayList che contiene i pixel delle foto
+		/**ArrayList che contiene i pixel delle foto
+		 * @return arraylist pixel
+		 */
 	      public static ArrayList<Integer> Pixel() throws IOException 
 	       {
 	    	   
