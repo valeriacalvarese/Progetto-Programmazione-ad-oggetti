@@ -1,6 +1,6 @@
 # Progetto: Spring BootFacebook Application
 
-L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato sviluppato mediante l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto è presente la Web Application Spring Boot che permette l'avvio dell'applicazione, e POSTMAN utilizzato per effettuare alcune richieste(con GET). 
+L'applicazione SpringBootFacebook permette all'utente di una pagina Facebook di fare delle richieste tramite software di API development POSTMAN, il quale fornisce i risultati in formato JSON. Lo sviluppo dell'applicazione è stato possibile grazie al sito open-source FACEBOOK FOR DEVELOPERS, una pagina web che permette agli sviluppatori e alle aziende di conoscere più in dettaglio i dati delle proprie pagine,tramite il token di accesso autorizzato. Il codice è stato sviluppato mediante l'IDE di ECLIPSE in linguaggio JAVA. Nel progetto sono presenti la Web Application Spring Boot che permette l'avvio dell'applicazione, e POSTMAN utilizzato per effettuare alcune richieste(con GET). 
 
 L'applicazione è in grado di:
  * elencare i post pubblicati sulla pagina ed esprime la presenza dell' immagine (GET);
@@ -14,14 +14,14 @@ L'applicazione è in grado di:
 ## Avvio Applicazione
 Per poter iniziare bisogna registrare un proprio account Facebook su Facebook for Developers ed è necessario generare il token di accesso autorizzato per le pagine. (https://developers.facebook.com/docs/pages/publishing).
 
-In seguito, dopo aver scaricato i software necessari per l'utilizzo (Eclipse, Postman...), bisogna entrare su Eclipse e clonare questo repository GitHub, in basso a destra, nel seguente modo:
+In seguito, dopo aver scaricato i software necessari per l'utilizzo (Eclipse, Postman...), bisogna entrare su Eclipse e clonare questo repository GitHub, nel seguente modo:
  * clone a repository;
  * URL:https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti;
- * FINISH. 
+ * finish. 
 
-Una volta clonata la repository nella propria IDE, è necessario sostituire i link già presente della classe SpringBootFacebookApplication nel seguente modo:
+Una volta clonata la repository nella propria IDE, è necessario sostituire i link già presenti nella classe SpringBootFacebookApplication nel seguente modo:
  * riga 28: https://graph.facebook.com/v7.0/{Id_Pagina}/feed?access_token={codice};
- * riga 30: "https://graph.facebook.com/v7.0/{Id_PAgina}/feed?fields=full_picture&access_token={codice}.
+ * riga 30: https://graph.facebook.com/v7.0/{Id_PAgina}/feed?fields=full_picture&access_token={codice}.
 
 Dopo aver cliccare su run as Spring Boot App sarà possibile, attraverso Postman, inserire le diverse richieste di GET all'url http://localhost:8080.
 
@@ -29,7 +29,7 @@ Dopo aver cliccare su run as Spring Boot App sarà possibile, attraverso Postman
 
 Tipo | Percorso | Descrizione
 ---- | ----- | -----
-GET | /post | Richiesta elenco post e presenza foto nella pagina
+GET | /post | Richiesta elenco post della pagina e presenza della foto nel post
 GET | /tot | Richiesta totale numero post nella pagina
 GET | /metadati | Richiesta elenco Metadati
 GET | /maxbytes | Richiesta statistica massimo dei bytes utilizzati da una foto
