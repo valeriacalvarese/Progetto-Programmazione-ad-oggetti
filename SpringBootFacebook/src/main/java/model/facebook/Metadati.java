@@ -16,6 +16,13 @@ public class Metadati
 	private String property; //descrizione campo
 	private String story;
 	
+	/* costuttore della classe
+	 * @param name, name del dato
+	 * @param type, tipo di caratteristica
+	 * @param property, significato
+	 * 
+	 * 
+	 */
 	public Metadati(String name, String type, String property)
 	{
 		this.name = name;
@@ -23,6 +30,7 @@ public class Metadati
 		this.property= property;
 	}
 
+	//  metodi Getters and Setters
 	public String getName() {
 		return name;
 	}
@@ -57,6 +65,9 @@ public class Metadati
 	}
 
 	@Override
+	
+	//Override del metodo toString
+	
 	public String toString() {
 		return this.getName()+ ":"+this.getProperty()+"\n"+this.getType()+ "\n" + this.getStory();
 	}
