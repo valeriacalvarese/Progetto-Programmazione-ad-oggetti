@@ -1,6 +1,6 @@
 package util.facebook;
 
-/* 
+/** 
  *  
 * @author Valeria Calvarese
 * 
@@ -13,7 +13,10 @@ import org.json.JSONException;
 
 import model.facebook.*;
 
-
+/**
+ * classe che gestisce oggetti di post foto e metadati
+ *
+ */
 
 public class Storage
 {
@@ -22,14 +25,13 @@ public class Storage
 	public static ArrayList<Post> post = new ArrayList<Post>();
 	public static ArrayList<Post> foto = new ArrayList<Post>();
 	
-	/** dopo il parsing salvo l'array dei posts
-	 * @param str,url del parsing
+	/** dopo il parsing salva l'array dei post 
+
+	 * @param string1
 	 * @throws MalformedURLException
-	 * @throws IOException
-	 * @throws JSONException 
-	 *  
-	*/
-	
+	 * @IOException 
+	 * @JSONException
+	 */
 	public static void fill_post(String string1) throws MalformedURLException, IOException, JSONException
 	{
 		//controllo eccezioni	
@@ -55,7 +57,13 @@ public class Storage
 		
 	}
 	
-	
+	/** dopo il parsing salva l'array delle foto
+
+	 * @param string2
+	 * @throws MalformedURLException
+	 * @IOException 
+	 * @JSONException
+	 */
 	public static void fill_foto(String string2) throws JSONException, MalformedURLException, IOException
 		{
 		//controllo eccezioni
@@ -78,26 +86,27 @@ public class Storage
 		} 	
 	}
 	
-	/*
-	 * @return array post
+	/**
+	 * @return array list post
 	 */
 	
 	public static ArrayList<Post> get_post() {
 		return post;
 	}
-	/*
-	 * @return array foto
+	
+	/**
+	 * @return arraylist foto
 	 */
-public static ArrayList<Post> get_foto(){
+	public static ArrayList<Post> get_foto(){
 		
 			return foto;
 		
 	}
 	
-/* dopo il parsing salvo l'array dei posts
- * @return metadata
- *  
-*/
+	/**  
+	 * @return  metadati
+	 */
+	
 	
 	public static void fill_Metadati() {
 		
@@ -112,9 +121,8 @@ public static ArrayList<Post> get_foto(){
 		
 	}
 	
-	/*array che restituisce i metadati
-	 * 
-	 * @return array metadati
+	/**
+	 * @return arraylist che restituisce i metadati
 	 */
 	public static ArrayList<Metadati> get_Metadati()
 	{

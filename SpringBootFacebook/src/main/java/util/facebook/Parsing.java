@@ -1,6 +1,6 @@
 package util.facebook;
 
-/* il parsing analizza i dati d'ingresso;
+/** il parsing analizza i dati d'ingresso;
  *  
 * @author Valeria Calvarese
 * 
@@ -20,18 +20,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parsing {
 	 
-	
 
+/**
+ * metodo di parsing per la creazione di arraylist dei post
+ * @param link
+ * @return arraylist
+ * @throws MalformedURLException
+ * @throws IOException
+ * @throws JSONException
+ */
 	
-	/**
-	 * metodo di parsing per la creazione di ArrayList<Post>
-	 * @param link, da dove otteniamo le stringhe per effetuare richiesta get per il parsing
-	 * @return arraylist di post
-	 * @throws MalformedURLException
-	 * @throws IOException
-	 * @throws JSONException
-	 *
-	 **/
+	
 	public static ArrayList<Post> getPost(String link) throws MalformedURLException, IOException, JSONException
 	 	 {
 			 String url =null;
@@ -75,14 +74,14 @@ public class Parsing {
 			 return post;
 	 	 }
 	
-	 /** metodo di parsing per la creazione di ArrayList<Post>
-	 * @param link, da dove otteniamo le stringhe per effetuare richiesta get per il parsing
-	 * @return arraylist di post
-	 * @throws MalformedURLException
+	/**
+	 * metodo di parsing per la creazione di arraylist di foto
+	 * @param link
+	 * @return arraylist
+	 *
 	 * @throws IOException
 	 * @throws JSONException
-	 *
-	 **/
+	 */
 	public static ArrayList<Post> getFoto(String link) throws JSONException, IOException
 	{
 		 String url =null;
@@ -91,7 +90,6 @@ public class Parsing {
 		 try 
 		 {
 			 url = Reading.read_url (link);
-			 //URL url1 = new URL("https://graph.facebook.com/v7.0/PerriSristorantePizzeria/feed?fields=full_picture&access_token=EAAEBaCJy5BwBAIruMFDGMl91xciu9nbcXZCEl4o6hxWgiV0IW2gZAVcFZCVtZC7Wzz31z5WVZCJoEdX0OeLHU5NZBc2dZAL0SaliVY2jkq9ioI5PQ6rFxA61fGssIN3HP2WMkKudehNctbQYY8ql1Lw7cr07CjE3JToP9kH53BjXAZDZD");
 			 
 		 }
 		 catch (MalformedURLException e)
@@ -114,8 +112,6 @@ public class Parsing {
 		 
 		 for (int i=0; i<array2.length(); i++)
 		 {
-			 //prende elemento in pos i dell'array data  e lo mette in o
-			 //data è l'array json restituito da postman
 			 JSONObject o4 = o.getJSONArray("data").getJSONObject(i);
 			 ObjectMapper o5 =new ObjectMapper ();
 			 Post o6  = o5.readValue(o4.toString(), Post.class);
@@ -125,11 +121,15 @@ public class Parsing {
 		 return foto;
 		 
 	 }
-	 
-	/**metodo per la presenza delle foto nei post
-	 * @return true se è presente
+	/**
+	 * metodo che scorre l array dei post e vede se sono presenti le foto
+	 * 
+	 * @return true, se la foto � presente
 	 * @return link della foto
-	*/
+	 
+	 */
+	 
+
 	public static void ContainPhoto(ArrayList<Post> post, ArrayList<Post> a)
 	{
 	int j=0; 
