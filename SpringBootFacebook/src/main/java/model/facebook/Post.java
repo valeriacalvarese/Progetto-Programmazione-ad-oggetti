@@ -3,7 +3,7 @@ package model.facebook;
 
 
 
-/* Classe che descrive i post di facebook;
+/** Classe che descrive i post di facebook;
   * 
   * @author Valeria Calvarese
   */
@@ -16,13 +16,14 @@ public class Post {
 	private String story;
 	private String full_picture;
 	private Boolean ContainPhoto;
-	private int conta;
 	
 	
 	
 	
-	//costruttore;
-	public Post (int conta)
+	/**costruttore;
+	 * 
+	 */
+	public Post ()
 	{
 		this.id = null;
 		this.message= null;
@@ -30,10 +31,12 @@ public class Post {
 		this.story =null;
 		this.full_picture = null ;
 		this.ContainPhoto =null;
-		this.conta = 0;
+		
 	}
 	
-	
+	/**
+	 * metodi Getters and Setters
+	 */
 	
 	public String getId() {
 		return id;
@@ -85,23 +88,6 @@ public class Post {
 
 	public void setContainPhoto(Boolean b) {
 		this.ContainPhoto=b;
-	}
-	
-	public int getConta() {
-		return Conta;
-	}
-
-
-
-	public void setConta(int conta) {
-		this.Conta;
-	}
-	
-	public static Post String Count(Post p)
-	{
-		p.setConta(getArrayPost().size());
-		return p;
-		
 	}
 	
 }
