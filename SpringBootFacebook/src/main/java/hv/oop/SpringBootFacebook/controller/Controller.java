@@ -29,7 +29,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller 
 {
-	//Elenco dei post della pagina
+	/*Elenco dei post della pagina
+	 * @return elenco dei post con presenza di foto
+	 */
 	@GetMapping("/post")
 	public static ArrayList<Post> getArrayPost()
 	{
@@ -38,7 +40,10 @@ public class Controller
 		
 	}
 	
-	//Conta numero dei post della pagina
+	/*Conta numero dei post della pagina
+	 * 
+	 * @return numero totale dei post
+	*/
 	
 	@GetMapping("/tot")
 	public String Count()
@@ -48,14 +53,19 @@ public class Controller
 	}
 	
 	
-	//Elenco Metadati della pagina
+	/*Elenco Metadati della pagina
+	 * 
+	 * @return elenco dei metadata
+	 */
 	@GetMapping("/metadati")
 	public static ArrayList<Metadati> getArrayMetadati()
 	{
 		return Storage.get_Metadati();
 	}
 	
-	//Max Bytes di una foto
+	/*Max Bytes di una foto
+	 * @return massimo bytes occupato da una foto
+	*/
 	@GetMapping ("/maxbytes")
 	public static Statistics  MaxByte() throws IOException
 	{
@@ -63,7 +73,10 @@ public class Controller
 		Statistics s= new Statistics();
 		return StatsService.MaxBytes(s);
 	}
-	//Min Bytes di una foto
+	/*Min Bytes di una foto
+	 * 
+	 * @return minimo bytes occupato da una foto
+	*/
 	@GetMapping ("/minbytes")
 	public static Statistics MinByte() throws IOException
 	{
@@ -72,7 +85,9 @@ public class Controller
 		return StatsService.MinBytes(s);
 	}
 	
-	//Max Pixel di una foto
+	/*Max Pixel di una foto
+	  * @return massimo dei pixel occupato da una foto
+	*/
 		@GetMapping ("/maxpixel")
 		public static Statistics  MaxPixel() throws IOException
 		{
@@ -80,7 +95,9 @@ public class Controller
 			Statistics s= new Statistics();
 			return StatsService.MaxPixel(s);
 		}
-		//Min Pixel di una foto
+		/*Min Pixel di una foto
+		  * @return minimo dei pixel occupato da una foto
+		*/
 		@GetMapping ("/minpixel")
 		public static Statistics MinPixel() throws IOException
 		{
@@ -90,14 +107,19 @@ public class Controller
 		}
 	
 	@GetMapping ("AveragePixel")
-	  //Media dei Pixel
+	  /*Media dei Pixel
+	 * @return media dei pixel	
+	 * */
+	
 	public static Statistics AveragePixel() throws IOException 
 	{
 		Statistics s = new Statistics();
 		return StatsService.AveragePixel(s);
 	}
 	
-	//Media dei Bytes
+	/*Media dei Bytes
+	 * @return media dei bytes 
+	*/
 	@GetMapping ("AverageBytes")
 	public static Statistics AverageBytes() throws IOException 
 	{
