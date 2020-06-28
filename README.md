@@ -20,8 +20,8 @@ In seguito, dopo aver scaricato i software necessari per l'utilizzo (Eclipse, Po
  * finish. 
 
 Una volta clonata la repository nella propria IDE, è necessario sostituire i link già presenti nella classe SpringBootFacebookApplication nel seguente modo:
- * riga 28: https://graph.facebook.com/v7.0/{Id_Pagina}/feed?access_token={codice};
- * riga 30: https://graph.facebook.com/v7.0/{Id_PAgina}/feed?fields=full_picture&access_token={codice}.
+ * riga 28: https://graph.facebook.com/v7.0/{Id_Pagina}/feed?access_token={token};
+ * riga 30: https://graph.facebook.com/v7.0/{Id_PAgina}/feed?fields=full_picture&access_token={token}.
 
 Dopo aver cliccare su run as Spring Boot App sarà possibile, attraverso Postman, inserire le diverse richieste di GET all'url http://localhost:8080.
 
@@ -54,6 +54,9 @@ GET | /AveragePixel | Richiesta media dei pixel delle foto
 
 ### Service
 ![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/Service%20Class%20Diagram.jpg)
+
+## Diagramma delle sequenze
+![Logo](https://github.com/valeriacalvarese/Progetto-Programmazione-ad-oggetti/blob/master/UML.ApplicazioneFacebook/Facebook%20Sequence%20Diagram.jpg)
 
 ## Software utilizzati
 * [Eclipse](https://www.eclipse.org/downloads/) - Ambiente di sviluppo
