@@ -1,7 +1,7 @@
 package util.facebook;
 
 
-/** creata classe Reading
+/* creata classe Reading
 
  *  
 * @author Valeria Calvarese
@@ -12,10 +12,14 @@ import java.net.MalformedURLException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-
+/* 
+ *  
+* @author Valeria Calvarese
+* 
+*/
 public class Reading {
 	
-	/* legge il contenuto del url	
+	/** legge il contenuto del url	
 	 * @param url per fare il reading
 	 * @return stringa da leggere
 	 * @throws MalformedURLException 

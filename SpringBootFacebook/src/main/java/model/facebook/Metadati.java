@@ -2,7 +2,7 @@ package model.facebook;
 
 
 /*
- * *  
+ *   
 * @author Valeria Calvarese
 *
 */
@@ -16,13 +16,13 @@ public class Metadati
 	private String property; //descrizione campo
 	private String story;
 	
-	/* costuttore della classe
-	 * @param name, name del dato
-	 * @param type, tipo di caratteristica
-	 * @param property, significato
-	 * 
-	 * 
-	 */
+	/** costuttore della classe
+	 ** @param name, name del dato
+	 ** @param type, tipo di caratteristica
+	 ** @param property, significato
+	 ** 
+	 ** 
+	 **/
 	public Metadati(String name, String type, String property)
 	{
 		this.name = name;

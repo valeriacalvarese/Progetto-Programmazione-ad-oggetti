@@ -40,32 +40,33 @@ public class Controller
 		
 	}
 	
-	/*Conta numero dei post della pagina
-	 * 
-	 * @return numero totale dei post
-	*/
+	/**Conta numero dei post della pagina
+	 ** 
+	 ** @return numero totale dei post
+	**/
 	
 	@GetMapping("/tot")
-	public String Count()
+	public static Post Count()
 	{
 		
-		return "Il numero totale di post e' : " +getArrayPost().size();
+		Post p = new Post();
+		return Post.Count;
 	}
 	
 	
-	/*Elenco Metadati della pagina
-	 * 
-	 * @return elenco dei metadata
-	 */
+	/**Elenco Metadati della pagina
+	 ** 
+	 ** @return elenco dei metadata
+	 **/
 	@GetMapping("/metadati")
 	public static ArrayList<Metadati> getArrayMetadati()
 	{
 		return Storage.get_Metadati();
 	}
 	
-	/*Max Bytes di una foto
-	 * @return massimo bytes occupato da una foto
-	*/
+	/**Max Bytes di una foto
+	 ** @return massimo bytes occupato da una foto
+	**/
 	@GetMapping ("/maxbytes")
 	public static Statistics  MaxByte() throws IOException
 	{
@@ -73,10 +74,10 @@ public class Controller
 		Statistics s= new Statistics();
 		return StatsService.MaxBytes(s);
 	}
-	/*Min Bytes di una foto
-	 * 
-	 * @return minimo bytes occupato da una foto
-	*/
+	/**Min Bytes di una foto
+	 ** 
+	 ** @return minimo bytes occupato da una foto
+	**/
 	@GetMapping ("/minbytes")
 	public static Statistics MinByte() throws IOException
 	{
@@ -85,9 +86,9 @@ public class Controller
 		return StatsService.MinBytes(s);
 	}
 	
-	/*Max Pixel di una foto
-	  * @return massimo dei pixel occupato da una foto
-	*/
+	/**Max Pixel di una foto
+	  ** @return massimo dei pixel occupato da una foto
+	**/
 		@GetMapping ("/maxpixel")
 		public static Statistics  MaxPixel() throws IOException
 		{
@@ -95,9 +96,9 @@ public class Controller
 			Statistics s= new Statistics();
 			return StatsService.MaxPixel(s);
 		}
-		/*Min Pixel di una foto
-		  * @return minimo dei pixel occupato da una foto
-		*/
+		/**Min Pixel di una foto
+		  ** @return minimo dei pixel occupato da una foto
+		**/
 		@GetMapping ("/minpixel")
 		public static Statistics MinPixel() throws IOException
 		{
@@ -107,9 +108,9 @@ public class Controller
 		}
 	
 	@GetMapping ("AveragePixel")
-	  /*Media dei Pixel
-	 * @return media dei pixel	
-	 * */
+	  /**Media dei Pixel
+	 ** @return media dei pixel	
+	 **/
 	
 	public static Statistics AveragePixel() throws IOException 
 	{
@@ -117,9 +118,9 @@ public class Controller
 		return StatsService.AveragePixel(s);
 	}
 	
-	/*Media dei Bytes
-	 * @return media dei bytes 
-	*/
+	/**Media dei Bytes
+	 ** @return media dei bytes 
+	**/
 	@GetMapping ("AverageBytes")
 	public static Statistics AverageBytes() throws IOException 
 	{

@@ -1,6 +1,6 @@
 package util.facebook;
 
-/** il parsing analizza i dati d'ingresso;
+/* il parsing analizza i dati d'ingresso;
  *  
 * @author Valeria Calvarese
 * 
@@ -23,7 +23,7 @@ public class Parsing {
 	
 
 	
-	/*
+	/**
 	 * metodo di parsing per la creazione di ArrayList<Post>
 	 * @param link, da dove otteniamo le stringhe per effetuare richiesta get per il parsing
 	 * @return arraylist di post
@@ -31,7 +31,7 @@ public class Parsing {
 	 * @throws IOException
 	 * @throws JSONException
 	 *
-	 */
+	 **/
 	public static ArrayList<Post> getPost(String link) throws MalformedURLException, IOException, JSONException
 	 	 {
 			 String url =null;
@@ -75,14 +75,14 @@ public class Parsing {
 			 return post;
 	 	 }
 	
-	 /* metodo di parsing per la creazione di ArrayList<Post>
+	 /** metodo di parsing per la creazione di ArrayList<Post>
 	 * @param link, da dove otteniamo le stringhe per effetuare richiesta get per il parsing
 	 * @return arraylist di post
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 * @throws JSONException
 	 *
-	 */
+	 **/
 	public static ArrayList<Post> getFoto(String link) throws JSONException, IOException
 	{
 		 String url =null;
@@ -126,7 +126,7 @@ public class Parsing {
 		 
 	 }
 	 
-	/*metodo per la presenza delle foto nei post
+	/**metodo per la presenza delle foto nei post
 	 * @return true se è presente
 	 * @return link della foto
 	*/

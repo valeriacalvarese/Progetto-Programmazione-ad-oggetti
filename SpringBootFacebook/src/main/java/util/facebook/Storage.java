@@ -1,6 +1,6 @@
 package util.facebook;
 
-/** 
+/* 
  *  
 * @author Valeria Calvarese
 * 
@@ -22,7 +22,7 @@ public class Storage
 	public static ArrayList<Post> post = new ArrayList<Post>();
 	public static ArrayList<Post> foto = new ArrayList<Post>();
 	
-	/* dopo il parsing salvo l'array dei posts
+	/** dopo il parsing salvo l'array dei posts
 	 * @param str,url del parsing
 	 * @throws MalformedURLException
 	 * @throws IOException
